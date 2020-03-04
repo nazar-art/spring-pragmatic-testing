@@ -7,10 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author tolkv
- * @version 11/09/16
- */
+
 @Service
 @RequiredArgsConstructor
 public class PokemonRestWarehouseBackendPokemonService implements PokemonService {
@@ -19,8 +16,10 @@ public class PokemonRestWarehouseBackendPokemonService implements PokemonService
 
     @Override
     public Double getPokemonPower(String pokemonName) {
+        // run with another service - mocked with tests
         ResponseEntity<String> forEntity = restTemplate.getForEntity(pokemonHome.getHome(), String.class);
         return Double.valueOf(forEntity.getBody());
-//    return Math.random();
+        // local running
+//        return Math.random();
     }
 }

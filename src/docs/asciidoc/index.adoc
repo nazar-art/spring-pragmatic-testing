@@ -1,9 +1,9 @@
 = Pokemon API
-Tolkachev Kirill <tolk.kv@gmail.com>
+Test <test@gmail.com>
 
 == Greet API
 
-If you were a pokemon, i`d choose you!
+If you were a pokemon, I`d choose you!
 
 === GET greeting
 
@@ -32,5 +32,39 @@ include::{snippets}/greet pokemon/http-request.adoc[]
 ===== HTTP Response GET
 
 include::{snippets}/greet pokemon/http-response.adoc[]
+
+// ====================================================================
+
+== Power API
+
+Pokemon power is super!
+
+=== GET greeting
+
+==== Request headers
+
+include::{snippets}/pokemon power/request-headers.adoc[]
+
+==== Response fields
+
+include::{snippets}/pokemon power/response-fields.adoc[]
+
+==== Examples
+
+===== Curl Request GET
+
+include::{snippets}/pokemon power/curl-request.adoc[]
+
+===== Httpie Request GET
+
+include::{snippets}/pokemon power/httpie-request.adoc[]
+
+===== HTTP Request GET
+
+include::{snippets}/pokemon power/http-request.adoc[]
+
+===== HTTP Response GET
+
+include::{snippets}/pokemon power/http-response.adoc[]
 
 // ==================================================================

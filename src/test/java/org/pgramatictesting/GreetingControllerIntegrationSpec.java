@@ -32,7 +32,7 @@ public class GreetingControllerIntegrationSpec {
     }
 
     @Test
-    public void checkGreetengController() throws Exception {
+    public void checkGreetingController() throws Exception {
         //given
         String pikachu = "Pikachu";
 

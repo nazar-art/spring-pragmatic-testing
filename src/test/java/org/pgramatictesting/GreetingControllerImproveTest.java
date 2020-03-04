@@ -28,8 +28,7 @@ public class GreetingControllerImproveTest {
     @Before
     public void setUp() throws Exception {
         // X greetingController = new GreetingController();
-        mockMvc = standaloneSetup(new GreetingController())
-                .build();
+        mockMvc = standaloneSetup(new GreetingController()).build();
     }
 
     @Test //Should greet valid pokemon
@@ -50,7 +49,7 @@ public class GreetingControllerImproveTest {
 
     /* behind the scene:
 
-    Use apply  for extenxt mock mvc functionality
+    Use apply  for extent mock mvc functionality
       mvc = MockMvcBuilders
         .webAppContextSetup(context)
         .apply(springSecurity()) 1

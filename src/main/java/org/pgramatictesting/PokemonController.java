@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author tolkv
- * @version 11/09/16
- */
+
 @RestController
 @RequiredArgsConstructor
 public class PokemonController {

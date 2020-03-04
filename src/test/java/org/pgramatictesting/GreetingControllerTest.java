@@ -2,15 +2,13 @@ package org.pgramatictesting;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-/**
- * @author tolkv
- * @version 11/09/16
- */
+
 @WebMvcTest
 public class GreetingControllerTest {
 

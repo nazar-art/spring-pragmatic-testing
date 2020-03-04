@@ -17,7 +17,7 @@ Run application by `./gradlew bootRun` command
         "say": "Hello kirill"
     }
 
-See the GreetingControllerTest.java. Say some words about Unit test problems and go to write integration tests.
+See the GreetingControllerTest.java. Say some words about Unit test problems and go to write integration tests (check integration tests).
 
 ### Results
 

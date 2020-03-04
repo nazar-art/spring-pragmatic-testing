@@ -14,12 +14,13 @@ import org.springframework.web.client.RestTemplate;
 @Service
 @RequiredArgsConstructor
 public class PokemonRestWarehouseBackendPokemonService implements PokemonService {
-  private final RestOperations restTemplate = new RestTemplate();
-  private final PokemonProperties pokemonHome;
+    private final RestOperations restTemplate = new RestTemplate();
+    private final PokemonProperties pokemonHome;
 
-  @Override
-  public Double getPokemonPower(String pokemonName) {
-    ResponseEntity<String> forEntity = restTemplate.getForEntity(pokemonHome.getHome(), String.class);
-    return Double.valueOf(forEntity.getBody());
-  }
+    @Override
+    public Double getPokemonPower(String pokemonName) {
+        ResponseEntity<String> forEntity = restTemplate.getForEntity(pokemonHome.getHome(), String.class);
+        return Double.valueOf(forEntity.getBody());
+//    return Math.random();
+    }
 }

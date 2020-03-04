@@ -15,21 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class PokemonController {
-  private final PokemonService pokemonService;
+    private final PokemonService pokemonService;
 
-  @GetMapping("/pokemon/{name}")
-  public PokemonResponse pokemon(@PathVariable String name){
-    Double pokemonPower = pokemonService.getPokemonPower(name);
-    return PokemonResponse.builder()
-        .name(name)
-        .power(pokemonPower)
-        .build();
-  }
+    @GetMapping("/pokemon/{name}")
+    public PokemonResponse pokemon(@PathVariable String name) {
+        Double pokemonPower = pokemonService.getPokemonPower(name);
+        return PokemonResponse.builder()
+                .name(name)
+                .power(pokemonPower)
+                .build();
+    }
 
-  @Data
-  @Builder
-  static class PokemonResponse {
-    String name;
-    Double power;
-  }
+    @Data
+    @Builder
+    static class PokemonResponse {
+        String name;
+        Double power;
+    }
 }

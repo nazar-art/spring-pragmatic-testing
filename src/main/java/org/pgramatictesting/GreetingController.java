@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GreetingController {
-  @GetMapping("/greet/{name}")
-  public GreetResult greet(@PathVariable String name) {
-    return GreetResult.builder()
-        .name(name)
-        .say("Hello " + name)
-        .build();
-  }
+    @GetMapping("/greet/{name}")
+    public GreetResult greet(@PathVariable String name) {
+        return GreetResult.builder()
+                .name(name)
+                .say("Hello " + name)
+                .build();
+    }
 
-  @Data
-  @Builder
-  static class GreetResult {
-    String name;
-    String say;
-  }
+    @Data
+    @Builder
+    static class GreetResult {
+        String name;
+        String say;
+    }
 }

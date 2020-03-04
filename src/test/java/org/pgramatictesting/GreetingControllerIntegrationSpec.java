@@ -24,22 +24,22 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(webEnvironment = RANDOM_PORT) // By default using MOCK webEnvironment
 public class GreetingControllerIntegrationSpec {
 
-  @Autowired
-  private TestRestTemplate restTemplate;
+    @Autowired
+    private TestRestTemplate restTemplate;
 
-  @Test
-  public void should_context_load() throws Exception {
-  }
+    @Test
+    public void should_context_load() throws Exception {
+    }
 
-  @Test
-  public void checkGreetengController() throws Exception {
-    //given
-    String pikachu = "Pikachu";
+    @Test
+    public void checkGreetengController() throws Exception {
+        //given
+        String pikachu = "Pikachu";
 
-    //when
-    String body = this.restTemplate.getForObject("/greet/" + pikachu, String.class);
+        //when
+        String body = this.restTemplate.getForObject("/greet/" + pikachu, String.class);
 
-    //then
-    MatcherAssert.assertThat("Should greet valid pokemon", body, Matchers.containsString("Hello " + pikachu));
-  }
+        //then
+        MatcherAssert.assertThat("Should greet valid pokemon", body, Matchers.containsString("Hello " + pikachu));
+    }
 }

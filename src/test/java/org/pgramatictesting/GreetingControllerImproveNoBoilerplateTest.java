@@ -21,7 +21,9 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.pr
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  * Tests based on standaloneSetup with minimal SpringDispatcherServlet context
@@ -41,9 +43,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureRestDocs("build/generated-snippets")
 public class GreetingControllerImproveNoBoilerplateTest {
 
-  // X private GreetingController greetingController;
-  @Autowired
-  private MockMvc mockMvc;
+    // X private GreetingController greetingController;
+    @Autowired
+    private MockMvc mockMvc;
 
 // X  @Before
 // X public void setUp() throws Exception {
@@ -52,37 +54,37 @@ public class GreetingControllerImproveNoBoilerplateTest {
 // X       .build();
 // X }
 
-  @Test //Should greet valid pokemon
-  public void greet() throws Exception {
-    //given
-    String pikachu = "Pikachu";
+    @Test //Should greet valid pokemon
+    public void greet() throws Exception {
+        //given
+        String pikachu = "Pikachu";
 
-    //expect
-    mockMvc.perform(
-        get("/greet/" + pikachu)
-            .accept(MediaType.APPLICATION_JSON)
-    )
-        .andExpect(status().isOk())
-        .andExpect(
-            jsonPath("$.say", equalTo("Hello " + pikachu)) // check it!
+        //expect
+        mockMvc.perform(
+                get("/greet/" + pikachu)
+                        .accept(MediaType.APPLICATION_JSON)
         )
-        .andExpect(content().string(containsString(pikachu))) // check it again, another way
-        .andDo(document("greet pokemon",
-            preprocessRequest(prettyPrint()),
-            preprocessResponse(prettyPrint()),
-            requestHeaders(
-                headerWithName("Accept")
-                    .description("Content type :)")
-            ),
-            responseFields(
-                fieldWithPath(".name")
-                    .description("Pokemon name")
-                    .type(JsonFieldType.STRING),
-                fieldWithPath(".say")
-                    .description("Pokemon greetings")
-                    .type(JsonFieldType.STRING)
-            )
-        )); // <-- need for generate docs and add descriptions for entities in doc
+                .andExpect(status().isOk())
+                .andExpect(
+                        jsonPath("$.say", equalTo("Hello " + pikachu)) // check it!
+                )
+                .andExpect(content().string(containsString(pikachu))) // check it again, another way
+                .andDo(document("greet pokemon",
+                        preprocessRequest(prettyPrint()),
+                        preprocessResponse(prettyPrint()),
+                        requestHeaders(
+                                headerWithName("Accept")
+                                        .description("Content type :)")
+                        ),
+                        responseFields(
+                                fieldWithPath(".name")
+                                        .description("Pokemon name")
+                                        .type(JsonFieldType.STRING),
+                                fieldWithPath(".say")
+                                        .description("Pokemon greetings")
+                                        .type(JsonFieldType.STRING)
+                        )
+                )); // <-- need for generate docs and add descriptions for entities in doc
 
     /* behind the scene:
 
@@ -98,6 +100,6 @@ public class GreetingControllerImproveNoBoilerplateTest {
        ...
      */
 
-  }
+    }
 
 }

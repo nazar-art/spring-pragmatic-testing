@@ -15,37 +15,38 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 /**
  * Tests based on standaloneSetup with minimal SpringDispatcherServlet context
- * @see org.springframework.test.web.servlet.setup.MockMvcBuilders#standaloneSetup(Object...)
  *
+ * @see org.springframework.test.web.servlet.setup.MockMvcBuilders#standaloneSetup(Object...)
+ * <p>
  * Use it for testing representation logic for controller separatly
  */
 public class GreetingControllerImproveTest {
 
-  // X private GreetingController greetingController;
-  private MockMvc mockMvc;
+    // X private GreetingController greetingController;
+    private MockMvc mockMvc;
 
-  @Before
-  public void setUp() throws Exception {
-  // X greetingController = new GreetingController();
-    mockMvc = standaloneSetup(new GreetingController())
-        .build();
-  }
+    @Before
+    public void setUp() throws Exception {
+        // X greetingController = new GreetingController();
+        mockMvc = standaloneSetup(new GreetingController())
+                .build();
+    }
 
-  @Test //Should greet valid pokemon
-  public void greet() throws Exception {
-    //given
-    String pikachu = "Pikachu";
+    @Test //Should greet valid pokemon
+    public void greet() throws Exception {
+        //given
+        String pikachu = "Pikachu";
 
-    //expect
-    mockMvc.perform(
-        get("/greet/" + pikachu)
-            .accept(MediaType.APPLICATION_JSON)
-    )
-        .andExpect(status().isOk())
-        .andExpect(
-            jsonPath("$.say", equalTo("Hello " + pikachu)) // check it!
+        //expect
+        mockMvc.perform(
+                get("/greet/" + pikachu)
+                        .accept(MediaType.APPLICATION_JSON)
         )
-        .andExpect(content().string(containsString(pikachu))); // check it again, another way
+                .andExpect(status().isOk())
+                .andExpect(
+                        jsonPath("$.say", equalTo("Hello " + pikachu)) // check it!
+                )
+                .andExpect(content().string(containsString(pikachu))); // check it again, another way
 
     /* behind the scene:
 
@@ -61,6 +62,6 @@ public class GreetingControllerImproveTest {
        ...
      */
 
-  }
+    }
 
 }

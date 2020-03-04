@@ -15,13 +15,13 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc
 public class MockMvcBaseTest {
 
-  @Autowired
-  public MockMvc mockMvc;
+    @Autowired
+    public MockMvc mockMvc;
 
-  @Rule
-  public WireMockRule wireMockRule = new WireMockRule(
-      WireMockConfiguration.wireMockConfig()
-          .port(12000)
-          .notifier(new ConsoleNotifier(true))
-  );
+    @Rule
+    public WireMockRule wireMockRule = new WireMockRule(
+            WireMockConfiguration.wireMockConfig()
+                    .port(12000)
+                    .notifier(new ConsoleNotifier(true))
+    );
 }

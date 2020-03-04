@@ -5,5 +5,5 @@ package org.pgramatictesting.service;
  * @version 11/09/16
  */
 public interface PokemonService {
-  Double getPokemonPower(String pokemonName);
+    Double getPokemonPower(String pokemonName);
 }

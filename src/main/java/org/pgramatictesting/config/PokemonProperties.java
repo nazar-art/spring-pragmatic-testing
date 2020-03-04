@@ -10,5 +10,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 @ConfigurationProperties("pokemon")
 public class PokemonProperties {
-  private String home;
+    private String home;
 }

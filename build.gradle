@@ -52,7 +52,6 @@ dependencies {
   compile 'com.github.tomakehurst:wiremock-standalone:2.1.9'
   testCompile 'org.springframework.boot:spring-boot-starter-test'
   testCompile 'org.springframework.restdocs:spring-restdocs-mockmvc'
-  asciidoctor 'org.springframework.restdocs:spring-restdocs-asciidoctor'
 }
 
 task wrapper(type: Wrapper) {
